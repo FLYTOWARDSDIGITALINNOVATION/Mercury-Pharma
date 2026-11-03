@@ -523,6 +523,7 @@ section { padding: 80px 0; }
 
 /* SERVICES */
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+#page-services > section:first-of-type .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .service-card {
   background: white; border: 1px solid var(--gray-200); border-radius: var(--radius);
   padding: 32px; transition: all 0.3s; position: relative; overflow: hidden;
@@ -653,7 +654,13 @@ section { padding: 80px 0; }
 }
 .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,86,219,0.35); }
 
-.contact-info-box { display: flex; flex-direction: column; gap: 20px; }
+.contact-info-box { display: flex; flex-direction: column; gap: 14px; }
+.location-call-box { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.contact-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.contact-benefit { background: var(--blue-pale); border: 1px solid var(--gray-200); border-radius: 14px; padding: 22px 24px; text-align: center; box-shadow: var(--shadow-sm); }
+.contact-benefit i { color: var(--orange); font-size: 32px; margin-bottom: 12px; }
+.contact-benefit h3 { color: var(--blue-dark); font-size: 19px; margin-bottom: 10px; }
+.contact-benefit p { color: var(--gray-700); font-size: 14px; line-height: 1.65; }
 .ci-card { background: white; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); display: flex; align-items: flex-start; gap: 16px; }
 .ci-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--blue-mid); flex-shrink: 0; }
 .ci-card h4 { font-size: 14px; font-weight: 700; color: var(--blue-dark); margin-bottom: 6px; }
@@ -730,6 +737,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
 
 /* RESPONSIVE */
 @media (max-width: 1180px) and (min-width: 769px) {
+  #page-services > section:first-of-type .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .top-bar { font-size: 11.5px; }
   .top-info { gap: 10px !important; }
   .top-bar-right { gap: 8px !important; }
@@ -745,8 +753,11 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .slide-content .container { grid-template-columns: 1fr; }
   .slide-visual { display: none; }
   .welcome-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; }
+  .location-call-box { grid-template-columns: 1fr; }
+  .contact-benefits { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .services-grid, .why-grid { grid-template-columns: 1fr 1fr; }
+  #page-services > section:first-of-type .services-grid { grid-template-columns: 1fr; }
   .company-logos-grid { grid-template-columns: repeat(3, 1fr); }
   .infra-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -1301,27 +1312,18 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   <div class="page-hero services">
     <div class="container">
       <h1>Our Services</h1>
-      <p>Comprehensive pharmaceutical distribution solutions tailored for every healthcare need</p>
+      <p>We cover every aspect of healthcare distribution</p>
     </div>
   </div>
 
   <section style="padding:80px 0;">
     <div class="container">
-      <div class="section-header fade-in">
-        <div class="section-label">What We Offer</div>
-        <h2 class="section-title">Our Service Portfolio</h2>
-        <p class="section-sub">From hospital supplies to home delivery — we cover every aspect of healthcare distribution</p>
-      </div>
       <div class="services-grid stagger fade-in"> 
         <div class="service-card"><div class="sc-icon">🏥</div><h3>Hospital Supplies</h3><p>Comprehensive supply of medicines, surgical items and healthcare products to both government and private hospitals. Dedicated account managers for large institutions.</p></div>
         <div class="service-card"><div class="sc-icon">🏛️</div><h3>Government Supplies</h3><p>Authorized government healthcare product supplier with experience in tendering, procurement processes and timely delivery to government medical institutions.</p></div>
         <div class="service-card"><div class="sc-icon">💊</div><h3>Pharmacy Supplies</h3><p>Fast and reliable medicine delivery to pharmacies and chemist shops. Wide product range ensures pharmacists can serve their customers without delay.</p></div>
         <div class="service-card"><div class="sc-icon">📦</div><h3>Wholesale Supplies</h3><p>Bulk medicine distribution with competitive pricing for sub-stockists, wholesalers and bulk purchasers across Tamil Nadu.</p></div>
-        <div class="service-card"><div class="sc-icon">🏠</div><h3>Free Home Delivery</h3><p>24×7 free home delivery support for patients and healthcare workers who need medicines urgently delivered to their doorstep.</p></div>
-        <div class="service-card"><div class="sc-icon">🩺</div><h3>Medical Camps</h3><p>Active support for community healthcare camps and medical awareness programs. We supply medicines and equipment for public health initiatives.</p></div>
-        <div class="service-card"><div class="sc-icon">🤝</div><h3>Customer Meet</h3><p>Annual customer appreciation and networking events to strengthen relationships and keep our partners updated on new products and services.</p></div>
-        <div class="service-card"><div class="sc-icon">🔬</div><h3>Medical Devices</h3><p>Authorized distributor for K-Life medical devices including glucose monitors, suction machines and other diagnostic equipment.</p></div>
-        <div class="service-card"><div class="sc-icon">💉</div><h3>Surgical Products</h3><p>Complete range of surgical consumables, instruments and disposables from trusted brands including BD and Dispo Van.</p></div>
+        <div class="service-card" style="grid-column: 1 / -1; width: 80%; justify-self: center; display: flex; align-items: center; gap: 24px;"><div class="sc-icon" style="margin-bottom: 0; flex-shrink: 0;">🏠</div><h3 style="margin: 0;">Home Delivery Available</h3></div>
       </div>
     </div>
   </section>
@@ -1331,15 +1333,49 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
       <div class="section-header">
         <div class="section-label">Why Mercury Pharma</div>
         <h2 class="section-title">Why Choose Us?</h2>
-        <p class="section-sub">Six compelling reasons why healthcare professionals across Tamil Nadu trust Mercury Pharma</p>
       </div>
       <div class="why-grid">
-        <div class="why-card"><div class="why-icon">✅</div><h3>Quality Products</h3><p>Every product in our inventory is sourced directly from certified manufacturers, ensuring authenticity and quality.</p></div>
-        <div class="why-card"><div class="why-icon">🗂️</div><h3>Wide Product Range</h3><p>10,000+ products across medicines, OTC, surgicals, devices — your one-stop pharmaceutical source.</p></div>
-        <div class="why-card"><div class="why-icon">🏗️</div><h3>Huge Warehouse</h3><p>7,000+ sq ft modern storage facility with temperature control and 24-hour security for product integrity.</p></div>
-        <div class="why-card"><div class="why-icon">⏰</div><h3>On-Time Delivery</h3><p>4 dedicated delivery vehicles and an efficient logistics team ensures your order reaches on time, every time.</p></div>
-        <div class="why-card"><div class="why-icon">😊</div><h3>Customer Satisfaction</h3><p>37+ years of business built on customer satisfaction. Our client retention rate speaks for itself.</p></div>
-        <div class="why-card"><div class="why-icon">💵</div><h3>Affordable Pricing</h3><p>Competitive wholesale prices with transparent billing. No hidden charges — just honest, affordable healthcare supply.</p></div>
+        <div class="why-card"><div class="why-icon">✅</div><h3>Quality Products</h3></div>
+        <div class="why-card"><div class="why-icon">🗂️</div><h3>Wide Product Range</h3></div>
+        <div class="why-card"><div class="why-icon">🏗️</div><h3>Huge Warehouse</h3></div>
+        <div class="why-card"><div class="why-icon">⏰</div><h3>On-Time Delivery</h3></div>
+        <div class="why-card"><div class="why-icon">😊</div><h3>Customer Satisfaction</h3></div>
+        <div class="why-card"><div class="why-icon">💵</div><h3>Affordable Pricing</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:80px 0;">
+    <div class="container">
+      <div class="section-header fade-in">
+        <div class="section-label">Media</div>
+        <h2 class="section-title">Media</h2>
+      </div>
+      <div class="services-grid stagger fade-in" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="service-card" style="padding:0; overflow:hidden; border-radius:16px;">
+          <div style="background:var(--blue-pale); height:180px; display:flex; align-items:center; justify-content:center; font-size:48px; color:var(--blue-mid);"><i class="fa fa-handshake"></i></div>
+          <div style="padding:24px;">
+            <div style="font-size:12px; color:var(--orange); font-weight:700; text-transform:uppercase; margin-bottom:8px;">Annual Event</div>
+            <h3 style="font-size:18px; margin-bottom:8px;">Customer Meets & Networking</h3>
+            <p>Annual customer appreciation and networking events connecting pharmacists, doctors, and stockists across Tamil Nadu.</p>
+          </div>
+        </div>
+        <div class="service-card" style="padding:0; overflow:hidden; border-radius:16px;">
+          <div style="background:var(--blue-pale); height:180px; display:flex; align-items:center; justify-content:center; font-size:48px; color:var(--blue-mid);"><i class="fa fa-hospital-user"></i></div>
+          <div style="padding:24px;">
+            <div style="font-size:12px; color:var(--orange); font-weight:700; text-transform:uppercase; margin-bottom:8px;">Community Service</div>
+            <h3 style="font-size:18px; margin-bottom:8px;">Medical Camps & Health Drives</h3>
+            <p>Supporting local health camps and awareness programs by supplying essential medicines and healthcare kits.</p>
+          </div>
+        </div>
+        <div class="service-card" style="padding:0; overflow:hidden; border-radius:16px;">
+          <div style="background:var(--blue-pale); height:180px; display:flex; align-items:center; justify-content:center; font-size:48px; color:var(--blue-mid);"><i class="fa fa-award"></i></div>
+          <div style="padding:24px;">
+            <div style="font-size:12px; color:var(--orange); font-weight:700; text-transform:uppercase; margin-bottom:8px;">Excellence</div>
+            <h3 style="font-size:18px; margin-bottom:8px;">39+ Years Anniversary</h3>
+            <p>Celebrating over 39 years of trusted pharmaceutical wholesale service in Southern Tamil Nadu since 1988.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1602,9 +1638,10 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
           </div>
 
          
-          <div class="contact-info-box" style="display: flex; flex-direction: column; gap: 14px;">
-            <!-- TOP FULL WIDTH CARD: Our Address & Land Mark -->
-            <div class="ci-card" style="padding: 18px 20px; align-items: flex-start; gap: 16px;">
+          <div class="contact-info-box">
+            <div class="ci-card location-call-box" style="padding: 18px 20px; align-items: flex-start;">
+            <!-- Location on the left -->
+            <div style="display: flex; align-items: flex-start; gap: 16px;">
               <div class="ci-icon" style="width: 44px; height: 44px; font-size: 18px; border-radius: 10px; flex-shrink: 0;"><i class="fa fa-map-marker-alt"></i></div>
               <div style="width: 100%;">
                 <h4 style="font-size: 14.5px; margin-bottom: 6px;">Location</h4>
@@ -1617,30 +1654,40 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
                   Tamil Nadu.
                 </p>
                 <div style="background: var(--blue-pale); padding: 10px 14px; border-radius: 8px; border: 1px solid rgba(26,86,219,0.15); display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 28px; height: 28px; border-radius: 6px; background: white; color: var(--blue-mid); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"><i class="fa fa-location-arrow"></i></div>
-                  <span style="font-size: 12px; color: var(--blue-dark); font-weight: 600;"><strong>Land Mark:</strong> Perarignar Anna Bus Stand.</span>
+                  <div style="width: 28px; height: 28px; border-radius: 6px; background: white; color: var(--blue-mid); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"><i class="fa fa-envelope"></i></div>
+                  <a href="mailto:mercurypharma@yahoo.com" style="font-size: 12px; color: var(--blue-dark); font-weight: 600;">mercurypharma@yahoo.com</a>
                 </div>
               </div>
             </div>
 
-            <!-- BOTTOM ROW (2 COLUMNS): Call Us & Email Address -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
-              <div class="ci-card" style="padding: 18px; align-items: flex-start; gap: 14px;">
-                <div class="ci-icon" style="width: 42px; height: 42px; font-size: 18px; border-radius: 10px; flex-shrink: 0;"><i class="fa fa-phone"></i></div>
-                <div>
-                  <h4 style="font-size: 14px; margin-bottom: 6px;">Call Us</h4>
-                  <a href="tel:+918270705556" style="font-size: 12px; line-height: 1.5; display: block;">+91 82707 05556</a>
-                  <a href="tel:+916369479451" style="font-size: 12px; line-height: 1.5; display: block;">+91 63694 79451</a>
-                  <a href="tel:+919442805851" style="font-size: 12px; line-height: 1.5; display: block;">+91 94428 05851</a>
-                </div>
+            <!-- Call Us on the right; grid keeps both cards the same size -->
+            <div style="display: flex; align-items: flex-start; gap: 14px;">
+              <div class="ci-icon" style="width: 42px; height: 42px; font-size: 18px; border-radius: 10px; flex-shrink: 0;"><i class="fa fa-phone"></i></div>
+              <div>
+                <h4 style="font-size: 14px; margin-bottom: 6px;">Call Us</h4>
+                <a href="tel:+918270705556" style="font-size: 12px; line-height: 1.5; display: block;">+91 82707 05556</a>
+                <a href="tel:+916369479451" style="font-size: 12px; line-height: 1.5; display: block;">+91 63694 79451</a>
+                <a href="tel:+919442805851" style="font-size: 12px; line-height: 1.5; display: block;">+91 94428 05851</a>
               </div>
-              <div class="ci-card" style="padding: 18px; align-items: flex-start; gap: 14px;">
-                <div class="ci-icon" style="width: 42px; height: 42px; font-size: 18px; border-radius: 10px; flex-shrink: 0;"><i class="fa fa-envelope"></i></div>
-                <div>
-                  <h4 style="font-size: 14px; margin-bottom: 6px;">E-mail</h4>
-                  <a href="mailto:mercurypharma@yahoo.com" style="font-size: 12px; display: block; word-break: break-all;">mercurypharma@yahoo.com</a>
-                </div>
-              </div>
+            </div>
+            </div>
+
+          </div>
+          <div class="contact-benefits">
+            <div class="contact-benefit">
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <h3>Environment</h3>
+              <p>We work in a friendly working environment where all our team members are cooperative, helpful and humble.</p>
+            </div>
+            <div class="contact-benefit">
+              <i class="fa fa-chart-line" aria-hidden="true"></i>
+              <h3>Career Growth</h3>
+              <p>We are one of the fast-growing companies and we prefer to work with talented, hard-working and punctual people.</p>
+            </div>
+            <div class="contact-benefit">
+              <i class="fa fa-briefcase" aria-hidden="true"></i>
+              <h3>Job Security</h3>
+              <p>Every employee of Mercurypharma is secured as far as his or her job is concerned. Hundred percent job security is given.</p>
             </div>
           </div>
         </div>
@@ -1712,7 +1759,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
                 <iframe src="https://maps.google.com/maps?q=9.174435,77.533180+(Mercury+Pharma)&output=embed&z=16" style="pointer-events:none;" allowfullscreen loading="lazy"></iframe>
               </div>
               <p style="font-size:12px;color:rgba(255,255,255,0.85);margin-top:8px;line-height:1.5;">
-                <i class="fa fa-map-marker-alt" style="color:var(--orange);margin-right:4px;"></i> No.73, Sangupuram 1st Street, Near Perarignar Anna Bus Stand, Sankarankovil, Tenkasi, TN – 627 756
+                <i class="fa fa-map-marker-alt" style="color:var(--orange);margin-right:4px;"></i> Land Mark: Perarignar Anna Bus Stand.
               </p>
               <span style="display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:12px;color:var(--orange);font-weight:700;"><i class="fa fa-external-link-alt"></i> Open Location in Maps</span>
             </a>
