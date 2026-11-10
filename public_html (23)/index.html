@@ -573,6 +573,7 @@ section { padding: 80px 0; }
 .about-founder { color: var(--gray-600); font-size: 15px; line-height: 1.8; }
 .about-founder p { margin: 0; }
 .about-brand-column img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 16px; margin-bottom: 22px; box-shadow: var(--shadow-md); }
+.about-brand-column > img, .about-founder > img, .about-chairman > img { height: 300px !important; object-fit: contain; margin-bottom: 18px !important; }
 .about-brand-column h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--blue-dark); margin-bottom: 14px; }
 .about-brand-column p { color: var(--gray-600); font-size: 15px; line-height: 1.8; }
 .about-text h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--blue-dark); margin-bottom: 20px; line-height: 1.3; }
@@ -609,6 +610,8 @@ section { padding: 80px 0; }
 /* BRANDS PAGE */
 .brands-hero { background: linear-gradient(135deg, var(--blue-dark), #1e3a8a); color: white; padding: 80px 0; text-align: center; margin-top: var(--header-height); }
 .brands-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 700; margin-bottom: 12px; }
+.brands-hero p { display: inline-block; margin-top: 8px; padding: 9px 18px; border: 1px solid rgba(255,255,255,0.35); border-radius: 24px; background: rgba(255,255,255,0.14); color: white; font-weight: 600; }
+.brands-companies .brands-highlight-title { display: inline-block; padding: 10px 22px; border-radius: 12px; background: #eff6ff; box-shadow: inset 4px 0 0 var(--orange); }
 .cat-tabs { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
 .cat-tab { padding: 10px 24px; border-radius: 25px; border: 2px solid var(--gray-200); background: white; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s; color: var(--gray-600); }
 .cat-tab.active, .cat-tab:hover { border-color: var(--blue-mid); background: var(--blue-mid); color: white; }
@@ -621,16 +624,17 @@ section { padding: 80px 0; }
   font-size: 14px; font-weight: 700; letter-spacing: 0.5px;
 }
 .tier-label span { background: var(--orange); padding: 2px 10px; border-radius: 10px; font-size: 12px; }
-.company-logos-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.company-logos-grid { display: grid; width: 100%; max-width: 100%; box-sizing: border-box; grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 16px; }
+.company-logos-grid.three-column-grid { width: 100%; max-width: 100%; margin-left: 0; margin-right: auto; grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
 .company-logo-card {
-  background: var(--gray-50); border: 2px solid var(--gray-200); border-radius: 14px;
+  min-width: 0; box-sizing: border-box; background: var(--gray-50); border: 2px solid var(--gray-200); border-radius: 14px;
   padding: 20px 16px; text-align: center; transition: all 0.25s; cursor: pointer;
 }
 .company-logo-card:hover { border-color: var(--blue-light); transform: translateY(-3px); box-shadow: var(--shadow-md); background: white; }
 .company-logo-card .co-name { font-size: 14px; font-weight: 700; color: var(--blue-dark); margin-top: 8px; }
 .company-logo-card .co-role { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
-.company-logo-card .co-icon { height: 88px !important; }
-.company-logo-card .co-icon img { max-height: 78px !important; max-width: 220px !important; object-fit: contain; }
+.company-logo-card .co-icon { width: 100%; max-width: 100%; height: 120px !important; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.company-logo-card .co-icon img { width: auto !important; height: 100px !important; max-height: 100px !important; max-width: 100% !important; object-fit: contain; }
 .co-icon { font-size: 28px; }
 
 .product-cats { background: var(--gray-50); }
@@ -785,7 +789,8 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .services-grid, .why-grid { grid-template-columns: 1fr 1fr; }
   #page-services > section:first-of-type .services-grid { grid-template-columns: 1fr; }
-  .company-logos-grid { grid-template-columns: repeat(3, 1fr); }
+  .company-logos-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .company-logos-grid.three-column-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   .infra-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .pcat-grid { grid-template-columns: repeat(2, 1fr); }
@@ -797,6 +802,8 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   .char-grid { grid-template-columns: 1fr; }
+  .company-logos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .company-logos-grid.three-column-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 }
 
 /* ANIMATIONS */
@@ -1206,7 +1213,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="about-side-column fade-in">
           <div class="about-founder">
             <img src="assets/Esakki%20Rajendran%20Chidambaram.PNG" alt="Mr. Esakki Chidambaram" style="display:block; width:100%; height:auto; border-radius:14px; margin-bottom:18px; box-shadow:var(--shadow-md);">
-            <p><strong>Mr. Essaki Chidambaram,</strong> the founder of Mercury Pharma. He is the man behind success through critical analysis of the business. Under his entrepreneurship Mercury Pharma took several strategic initiatives, which include identifying market opportunities and products that can fill a specific niche, developing business plans and forecasts, and participating in early marketing activities to build consumer awareness and excitement. Moreover, he is an inquisitive person who makes major corporate decisions, managing the overall operations and resources, acting as the mainly point of communication between the board and corporate operations and is the public face of Mercury.</p>
+            <p><strong>Mr. Esakki Rajendran Chidambaram</strong> the founder of Mercury Pharma. He is the man behind success through critical analysis of the business. Under his entrepreneurship Mercury Pharma took several strategic initiatives, which include identifying market opportunities and products that can fill a specific niche, developing business plans and forecasts, and participating in early marketing activities to build consumer awareness and excitement. Moreover, he is an inquisitive person who makes major corporate decisions, managing the overall operations and resources, acting as the mainly point of communication between the board and corporate operations and is the public face of Mercury.</p>
           </div>
           <div class="char-grid">
           <div class="char-card"><div class="char-icon">✓</div><div><h4>Quality Products</h4><p>Only genuine, certified medicines from trusted manufacturers</p></div></div>
@@ -1218,7 +1225,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         </div>
         <div class="about-chairman fade-in">
           <img src="assets/Esakki%20Rajendran%20Sankara%20Ramalingam.jpeg" alt="Mr. Esakki Sankara Ramalingam" style="display:block; width:100%; height:auto; border-radius:14px; margin-bottom:18px; box-shadow:var(--shadow-md);">
-          <p><strong>Mr. Essaki Sankara Ramalingam</strong> is the Chairman of Mercury Pharma. He has a 25-years track record as a strategist and commercial leader in the pharmaceutical industry. In Fact, his major duty is to plan and promote the daily schedule of business and employees, overseeing the operations and fiscal health of Mercury, maintaining work systems, Transportation, procedures, and policies that enable and persuade the optimum performance.</p>
+          <p><strong>Mr. Esakki Rajendran Sankara Ramalingam</strong> is the Chairman of Mercury Pharma. He has a 25-years track record as a strategist and commercial leader in the pharmaceutical industry. In Fact, his major duty is to plan and promote the daily schedule of business and employees, overseeing the operations and fiscal health of Mercury, maintaining work systems, Transportation, procedures, and policies that enable and persuade the optimum performance.</p>
         </div>
         </div>
       </div>
@@ -1335,14 +1342,14 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   <div class="brands-hero">
     <div class="container">
       <h1>Our Brands</h1>
-      <p>Authorized distributor for 35+ leading pharmaceutical companies</p>
+      <p class="brands-authorization">Authorized distributor for 35+ leading pharmaceutical companies</p>
     </div>
   </div>
 
   <section class="brands-companies">
     <div class="container">
       <div class="section-header fade-in" style="margin-top:20px;">
-        <h2 class="section-title">All Branded Generics In One Stop.</h2>
+        <h2 class="section-title brands-highlight-title">All Branded Generics In One Stop.</h2>
       </div>
 
       <div class="company-tier fade-in">
@@ -1380,7 +1387,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/zydus-logo.png" alt="Zydus Dedicated to Life" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
-            <div class="co-name">Zydus Dedicated to Life</div>
+            <div class="co-name">zydus pharma</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
@@ -1399,12 +1406,6 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
               <img src="assets/Laborate%20logo.png" alt="Laborate" style="max-height: 38px; max-width: 130px; object-fit: contain;">
             </div>
             <div class="co-name">Laborate</div>
-          </div>
-          <div class="company-logo-card">
-            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/sunpharma-logo.png" alt="Sun Pharma" style="max-height: 44px; max-width: 120px; object-fit: contain;">
-            </div>
-            <div class="co-name">Sun Pharma</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
@@ -1462,12 +1463,6 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="company-logos-grid">
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/ramaraju-logo.jpeg" alt="Surgical Pharma" style="max-height: 42px; max-width: 130px; object-fit: contain;">
-            </div>
-            <div class="co-name">Surgical Pharma</div>
-          </div>
-          <div class="company-logo-card">
-            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/bd-logo.png" alt="BD" style="max-height: 44px; max-width: 110px; object-fit: contain;">
             </div>
             <div class="co-name">BD</div>
@@ -1508,6 +1503,12 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
             </div>
             <div class="co-name">Smith</div>
           </div>
+          <div class="company-logo-card" data-sort-name="Smith Ethicon">
+            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
+              <img src="assets/Ethicon.jpg" alt="Ethicon" style="max-height: 44px; max-width: 125px; object-fit: contain;">
+            </div>
+            <div class="co-name">Ethicon</div>
+          </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Roche.jpg" alt="Roche" style="max-height: 44px; max-width: 125px; object-fit: contain;">
@@ -1519,7 +1520,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
 
       <div class="company-tier fade-in">
         <div class="tier-label"><i class="fa fa-shopping-basket"></i> Consumer Stockist</div>
-        <div class="company-logos-grid">
+        <div class="company-logos-grid three-column-grid">
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Friends.jpg" alt="Friends" style="max-height: 44px; max-width: 125px; object-fit: contain;">
@@ -1543,7 +1544,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
 
       <div class="company-tier fade-in">
         <div class="tier-label"><i class="fa fa-heartbeat"></i> Critical Care</div>
-        <div class="company-logos-grid">
+        <div class="company-logos-grid three-column-grid">
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Neon.png" alt="Neon" style="max-height: 44px; max-width: 125px; object-fit: contain;">
@@ -1554,7 +1555,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Amanta.png" alt="Amanta" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
-            <div class="co-name">Amanta</div>
+            <div class="co-name">Amanta - IV Fluids</div>
           </div>
         </div>
       </div>
@@ -2164,8 +2165,8 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('.company-logos-grid').forEach(grid => {
   [...grid.children]
     .sort((a, b) => {
-      const nameA = a.querySelector('.co-name')?.textContent.trim() || '';
-      const nameB = b.querySelector('.co-name')?.textContent.trim() || '';
+      const nameA = a.dataset.sortName || a.querySelector('.co-name')?.textContent.trim() || '';
+      const nameB = b.dataset.sortName || b.querySelector('.co-name')?.textContent.trim() || '';
       return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
     })
     .forEach(card => grid.appendChild(card));
