@@ -512,11 +512,11 @@ section { padding: 80px 0; }
 .brands-track { display: flex; gap: 0; animation: scrollBrands 35s linear infinite; width: max-content; }
 .brands-track:hover { animation-play-state: paused; }
 .brand-logo {
-  padding: 18px 32px; display: flex; align-items: center; justify-content: center;
-  min-width: 180px; border-right: 1px solid var(--gray-100); transition: all 0.3s ease;
+  padding: 22px 38px; display: flex; align-items: center; justify-content: center;
+  min-width: 220px; border-right: 1px solid var(--gray-100); transition: all 0.3s ease;
 }
 .brand-img {
-  height: 46px; width: auto; max-width: 150px; object-fit: contain;
+  height: 64px; width: auto; max-width: 210px; object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 2px 5px rgba(10,42,110,0.08));
 }
@@ -563,7 +563,7 @@ section { padding: 80px 0; }
 .about-hero p { font-size: 16px; opacity: 0.8; }
 
 .about-overview { background: white; }
-.about-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 30px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; align-items: start; }
 .about-brand-column { min-width: 0; grid-column: 1; grid-row: 2; }
 .about-text { grid-column: 1; grid-row: 1; }
 .about-side-column { display: contents; }
@@ -572,7 +572,7 @@ section { padding: 80px 0; }
 .about-chairman { grid-column: 3; grid-row: 2; color: var(--gray-600); font-size: 15px; line-height: 1.8; }
 .about-founder { color: var(--gray-600); font-size: 15px; line-height: 1.8; }
 .about-founder p { margin: 0; }
-.about-brand-column img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; margin-bottom: 22px; box-shadow: var(--shadow-md); }
+.about-brand-column img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 16px; margin-bottom: 22px; box-shadow: var(--shadow-md); }
 .about-brand-column h2 { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--blue-dark); margin-bottom: 14px; }
 .about-brand-column p { color: var(--gray-600); font-size: 15px; line-height: 1.8; }
 .about-text h2 { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--blue-dark); margin-bottom: 20px; line-height: 1.3; }
@@ -629,6 +629,8 @@ section { padding: 80px 0; }
 .company-logo-card:hover { border-color: var(--blue-light); transform: translateY(-3px); box-shadow: var(--shadow-md); background: white; }
 .company-logo-card .co-name { font-size: 14px; font-weight: 700; color: var(--blue-dark); margin-top: 8px; }
 .company-logo-card .co-role { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
+.company-logo-card .co-icon { height: 88px !important; }
+.company-logo-card .co-icon img { max-height: 78px !important; max-width: 220px !important; object-fit: contain; }
 .co-icon { font-size: 28px; }
 
 .product-cats { background: var(--gray-50); }
@@ -1061,8 +1063,8 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="brand-logo"><img src="assets/cadila-pharma.jpg" alt="CADILA Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/zydus-logo.png" alt="ZYDUS Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/amanta-logo.jpeg" alt="AMANTA Logo" class="brand-img"></div>
-        <div class="brand-logo"><img src="assets/laborate-logo.png" alt="LABORATE Logo" class="brand-img"></div>
-        <div class="brand-logo"><img src="assets/pci-logo.png" alt="PCI Logo" class="brand-img"></div>
+        <div class="brand-logo"><img src="assets/Laborate%20logo.png" alt="LABORATE Logo" class="brand-img"></div>
+        <div class="brand-logo"><img src="assets/PCI.jpg" alt="PCI Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/alembic-logo.png" alt="ALEMBIC Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/leeford-logo.png" alt="LEEFORD Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/classic-logo.jpeg" alt="CLASSIC Logo" class="brand-img"></div>
@@ -1077,8 +1079,8 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="brand-logo"><img src="assets/cadila-pharma.jpg" alt="CADILA Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/zydus-logo.png" alt="ZYDUS Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/amanta-logo.jpeg" alt="AMANTA Logo" class="brand-img"></div>
-        <div class="brand-logo"><img src="assets/laborate-logo.png" alt="LABORATE Logo" class="brand-img"></div>
-        <div class="brand-logo"><img src="assets/pci-logo.png" alt="PCI Logo" class="brand-img"></div>
+        <div class="brand-logo"><img src="assets/Laborate%20logo.png" alt="LABORATE Logo" class="brand-img"></div>
+        <div class="brand-logo"><img src="assets/PCI.jpg" alt="PCI Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/alembic-logo.png" alt="ALEMBIC Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/leeford-logo.png" alt="LEEFORD Logo" class="brand-img"></div>
         <div class="brand-logo"><img src="assets/classic-logo.jpeg" alt="CLASSIC Logo" class="brand-img"></div>
@@ -1178,7 +1180,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   <div class="about-hero">
     <div class="container">
       <h1>About Mercury Pharma</h1>
-      <p>37+ years of trust, dedication and pharmaceutical excellence</p>
+      <p>39+ years of trust, dedication and pharmaceutical excellence</p>
     </div>
   </div>
 
@@ -1203,6 +1205,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         </div>
         <div class="about-side-column fade-in">
           <div class="about-founder">
+            <img src="assets/Esakki%20Rajendran%20Chidambaram.PNG" alt="Mr. Esakki Chidambaram" style="display:block; width:100%; height:auto; border-radius:14px; margin-bottom:18px; box-shadow:var(--shadow-md);">
             <p><strong>Mr. Essaki Chidambaram,</strong> the founder of Mercury Pharma. He is the man behind success through critical analysis of the business. Under his entrepreneurship Mercury Pharma took several strategic initiatives, which include identifying market opportunities and products that can fill a specific niche, developing business plans and forecasts, and participating in early marketing activities to build consumer awareness and excitement. Moreover, he is an inquisitive person who makes major corporate decisions, managing the overall operations and resources, acting as the mainly point of communication between the board and corporate operations and is the public face of Mercury.</p>
           </div>
           <div class="char-grid">
@@ -1214,6 +1217,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
           <div class="char-card"><div class="char-icon">🕐</div><div><h4>24×7 Support</h4><p>Round-the-clock customer service for urgent requirements</p></div></div>
         </div>
         <div class="about-chairman fade-in">
+          <img src="assets/Esakki%20Rajendran%20Sankara%20Ramalingam.jpeg" alt="Mr. Esakki Sankara Ramalingam" style="display:block; width:100%; height:auto; border-radius:14px; margin-bottom:18px; box-shadow:var(--shadow-md);">
           <p><strong>Mr. Essaki Sankara Ramalingam</strong> is the Chairman of Mercury Pharma. He has a 25-years track record as a strategist and commercial leader in the pharmaceutical industry. In Fact, his major duty is to plan and promote the daily schedule of business and employees, overseeing the operations and fiscal health of Mercury, maintaining work systems, Transportation, procedures, and policies that enable and persuade the optimum performance.</p>
         </div>
         </div>
@@ -1338,9 +1342,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   <section class="brands-companies">
     <div class="container">
       <div class="section-header fade-in" style="margin-top:20px;">
-        <div class="section-label">Distribution Network</div>
-        <h2 class="section-title">Authorized Distributors</h2>
-        <p class="section-sub">Super Stockist, Main Stockist and Stockist for leading pharmaceutical companies</p>
+        <h2 class="section-title">All Branded Generics In One Stop.</h2>
       </div>
 
       <div class="company-tier fade-in">
@@ -1360,7 +1362,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
             <div class="co-icon" style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/medcell%20logo.png" alt="Medcell" style="max-height: 52px; max-width: 140px; object-fit: contain;">
             </div>
-            <div class="co-name">Medcell</div>
+            <div class="co-name">Medcell Pharma</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 55px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
@@ -1376,108 +1378,81 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="company-logos-grid">
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/amanta-logo.jpeg" alt="Amanta Healthcare Ltd." style="max-height: 40px; max-width: 120px; object-fit: contain;">
-            </div>
-            <div class="co-name">Amanta Healthcare Ltd.</div>
-            <div class="co-role">Main Stockist</div>
-          </div>
-          <div class="company-logo-card">
-            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/zydus-logo.png" alt="Zydus Dedicated to Life" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
             <div class="co-name">Zydus Dedicated to Life</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/alkem-logo.png" alt="Alkem" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
             <div class="co-name">Alkem</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/lupin-logo.png" alt="Lupin" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
             <div class="co-name">Lupin</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Laborate%20logo.png" alt="Laborate" style="max-height: 38px; max-width: 130px; object-fit: contain;">
             </div>
             <div class="co-name">Laborate</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/sunpharma-logo.png" alt="Sun Pharma" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
             <div class="co-name">Sun Pharma</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/cipla-logo.png" alt="Cipla" style="max-height: 38px; max-width: 110px; object-fit: contain;">
             </div>
             <div class="co-name">Cipla</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/pci-logo.png" alt="PCI" style="max-height: 42px; max-width: 110px; object-fit: contain;">
+              <img src="assets/PCI.jpg" alt="PCI" style="max-height: 42px; max-width: 110px; object-fit: contain;">
             </div>
             <div class="co-name">PCI</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Aristo%20logo.png" alt="Aristo" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Aristo</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Ranbaxy%20logo.jpg" alt="Ranbaxy" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Ranbaxy</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/leeford-logo.png" alt="Leeford" style="max-height: 40px; max-width: 120px; object-fit: contain;">
             </div>
             <div class="co-name">Leeford</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Knoll%20logo.jpg" alt="Knoll" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Knoll</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Morepen%20logo.jpg" alt="Morepen" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Morepen</div>
-            <div class="co-role">Main Stockist</div>
-          </div>
-          <div class="company-logo-card">
-            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/ramaraju-logo.jpeg" alt="Ramaraju Surgical" style="max-height: 42px; max-width: 130px; object-fit: contain;">
-            </div>
-            <div class="co-name">Ramaraju Surgical</div>
-            <div class="co-role">Main Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/alembic-logo.png" alt="Alembic" style="max-height: 42px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Alembic</div>
-            <div class="co-role">Main Stockist</div>
           </div>
         </div>
       </div>
@@ -1487,59 +1462,57 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <div class="company-logos-grid">
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
+              <img src="assets/ramaraju-logo.jpeg" alt="Surgical Pharma" style="max-height: 42px; max-width: 130px; object-fit: contain;">
+            </div>
+            <div class="co-name">Surgical Pharma</div>
+          </div>
+          <div class="company-logo-card">
+            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/bd-logo.png" alt="BD" style="max-height: 44px; max-width: 110px; object-fit: contain;">
             </div>
             <div class="co-name">BD</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Dispo%20Van%20logo.jpg" alt="Dispo Van" style="max-height: 40px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Dispo Van</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/3M%20logo.png" alt="3M" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">3M</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Romsons%20logo.png" alt="Romsons" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Romsons</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Dyna%20logo.jpg" alt="Dyna" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Dyna</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Surgicom%20logo.png" alt="Surgicom" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Surgicom</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Smith%20logo.jpg" alt="Smith" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Smith</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Roche.jpg" alt="Roche" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Roche</div>
-            <div class="co-role">Surgical Stockist</div>
           </div>
         </div>
       </div>
@@ -1552,21 +1525,18 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
               <img src="assets/Friends.jpg" alt="Friends" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Friends</div>
-            <div class="co-role">Consumer Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Tulips.png" alt="Tulips" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Tulips</div>
-            <div class="co-role">Consumer Stockist</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Kayam.png" alt="Kayam" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Kayam</div>
-            <div class="co-role">Consumer Stockist</div>
           </div>
         </div>
       </div>
@@ -1579,30 +1549,16 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
               <img src="assets/Neon.png" alt="Neon" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Neon</div>
-            <div class="co-role">Critical Care</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/Amanta.png" alt="Amanta" style="max-height: 44px; max-width: 125px; object-fit: contain;">
             </div>
             <div class="co-name">Amanta</div>
-            <div class="co-role">Critical Care</div>
           </div>
         </div>
       </div>
 
-      <div class="company-tier fade-in">
-        <div class="tier-label"><i class="fa fa-box"></i> Stockist <span>Partner</span></div>
-        <div class="company-logos-grid">
-          <div class="company-logo-card">
-            <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
-              <img src="assets/classic-logo.jpeg" alt="Classic" style="max-height: 44px; max-width: 110px; object-fit: contain;">
-            </div>
-            <div class="co-name">Classic</div>
-            <div class="co-role">Stockist</div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -2204,6 +2160,17 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== INIT =====
+// Keep distributor cards alphabetized within their stockist categories.
+document.querySelectorAll('.company-logos-grid').forEach(grid => {
+  [...grid.children]
+    .sort((a, b) => {
+      const nameA = a.querySelector('.co-name')?.textContent.trim() || '';
+      const nameB = b.querySelector('.co-name')?.textContent.trim() || '';
+      return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
+    })
+    .forEach(card => grid.appendChild(card));
+});
+
 triggerFadeIns();
 startCounters();
 
