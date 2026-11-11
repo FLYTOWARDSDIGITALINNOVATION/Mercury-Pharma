@@ -685,6 +685,7 @@ section { padding: 80px 0; }
 
 .contact-info-box { display: flex; flex-direction: column; gap: 14px; }
 .location-call-box { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.ci-card.location-call-box { display: grid; }
 .contact-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
 .contact-benefit { background: var(--blue-pale); border: 1px solid var(--gray-200); border-radius: 14px; padding: 26px 24px; text-align: center; box-shadow: var(--shadow-sm); }
 .contact-benefit i { color: var(--orange); font-size: 38px; margin-bottom: 14px; }
@@ -771,6 +772,10 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .top-info { gap: 10px !important; }
   .top-bar-right { gap: 8px !important; }
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  #page-contact .contact-layout { gap: 24px; }
+  #page-contact .location-call-box { grid-template-columns: 1fr; }
+}
 @media (max-width: 768px) {
   :root { --header-height: 72px; }
   .container { padding-left: 16px; padding-right: 16px; }
@@ -822,6 +827,12 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .testi-track { gap: 0; }
   .contact-form-box { padding: 28px 22px; }
   .contact-benefit { padding: 22px 18px; }
+  #page-contact .contact-layout { gap: 28px; }
+  #page-contact .contact-left-col, #page-contact .contact-right-col { gap: 20px; min-width: 0; }
+  #page-contact .location-call-box { grid-template-columns: minmax(0, 1fr); gap: 22px; width: 100%; }
+  #page-contact .location-call-box > div { min-width: 0; }
+  #page-contact .location-call-box a { overflow-wrap: anywhere; }
+  #page-contact .map-container iframe { height: clamp(240px, 65vw, 350px); }
   .footer-map-iframe iframe { height: 190px; }
   .float-btns { right: 14px; bottom: 18px; }
   .chat-bubble { right: 12px; bottom: 86px; max-width: min(240px, calc(100vw - 24px)); }
@@ -864,6 +875,11 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .ci-card { padding: 18px; gap: 12px; }
   .ci-icon { width: 42px; height: 42px; }
   .contact-benefit h3 { font-size: 19px; }
+  #page-contact .contact-form-box h2 { font-size: 23px; }
+  #page-contact .location-call-box { padding: 16px !important; }
+  #page-contact .location-call-box > div { gap: 10px !important; }
+  #page-contact .location-call-box a { font-size: 13px !important; }
+  #page-contact .map-container iframe { height: 250px; }
   .customer-photo-gallery { grid-template-columns: 1fr !important; }
   #healthCampPhotoViewer { padding: 14px !important; }
   #customerConnectViewer { padding: 58px 14px 14px !important; }
