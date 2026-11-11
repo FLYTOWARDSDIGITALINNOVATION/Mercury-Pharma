@@ -783,6 +783,12 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .slide-visual { display: none; }
   .welcome-grid, .about-grid, .contact-layout { grid-template-columns: 1fr; }
   .about-brand-column, .about-text, .about-side-column > .about-founder, .about-side-column > .char-grid, .about-chairman { grid-column: 1; grid-row: auto; }
+  /* Keep the About page in the order marked in the mobile review: 1–5. */
+  .about-text { order: 1; }
+  .about-side-column > .char-grid { order: 2; }
+  .about-brand-column { order: 3; }
+  .about-side-column > .about-founder { order: 4; }
+  .about-chairman { order: 5; }
   .wv-purpose-grid { grid-template-columns: 1fr; }
   .location-call-box { grid-template-columns: 1fr; }
   .contact-benefits { grid-template-columns: 1fr; }
