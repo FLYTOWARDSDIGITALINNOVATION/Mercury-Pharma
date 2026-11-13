@@ -825,6 +825,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .product-cats .container > div[style*="grid-template-columns"] > div { padding: 24px !important; }
   .testi-card { min-width: 100% !important; margin-right: 0; }
   .testi-track { gap: 0; }
+  .testi-text { min-width: 0; overflow-wrap: anywhere; }
   .contact-form-box { padding: 28px 22px; }
   .contact-benefit { padding: 22px 18px; }
   #page-contact .contact-layout { gap: 28px; }
@@ -865,8 +866,9 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .company-logos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .company-logos-grid.three-column-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   #page-brands .company-logos-grid[style] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-  .company-logo-card { padding: 12px; }
-  .company-logo-card .co-icon { height: 88px !important; }
+  .company-logo-card { padding: 12px 10px; min-width: 0; }
+  .company-logo-card .co-icon { height: 72px !important; }
+  .company-logo-card .co-icon img { height: 64px !important; max-height: 64px !important; width: auto !important; max-width: 100% !important; object-fit: contain; }
   .pcat-grid { gap: 12px; }
   .pcat-card { min-height: 160px; }
   .pcat-content { padding: 16px; }
@@ -984,6 +986,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
                 <span class="slide-tag">💊 OTC Products</span>
                 <span class="slide-tag">🔬 Surgicals</span>
                 <span class="slide-tag">💉 IV Fluids</span>
+                <span class="slide-tag">🐾 Veterinary Products</span>
               </div>
               <div class="slide-btns">
                 <button class="btn-primary" onclick="showPage('brands')"><i class="fa fa-pills"></i> View Products</button>
@@ -1467,7 +1470,7 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
               <img src="assets/zydus-logo.png" alt="Zydus Dedicated to Life" style="max-height: 44px; max-width: 120px; object-fit: contain;">
             </div>
-            <div class="co-name">zydus pharma</div>
+            <div class="co-name">Zydus pharma</div>
           </div>
           <div class="company-logo-card">
             <div class="co-icon" style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
@@ -2042,7 +2045,9 @@ function goToTesti(index) {
   testiSlide = index > maxIndex ? 0 : (index < 0 ? maxIndex : index);
   const track = document.getElementById('testiTrack');
   if (track && testiCards[0]) {
-    const cardW = testiCards[0].offsetWidth + 24;
+    const cardW = testiCards.length > 1
+      ? testiCards[1].getBoundingClientRect().left - testiCards[0].getBoundingClientRect().left
+      : testiCards[0].getBoundingClientRect().width;
     track.style.transform = `translateX(-${testiSlide * cardW}px)`;
   }
   document.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === testiSlide));
