@@ -795,7 +795,9 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
   .slide-content { padding: 64px 0 72px; }
   .slide-content .container { grid-template-columns: 1fr; }
   .slide-visual { display: none; }
-  .slide-text { max-width: 620px; }
+  .slide-text { max-width: 620px; width: 100%; min-width: 0; }
+  .slide-tags { width: 100%; min-width: 0; }
+  .slide-tag { max-width: 100%; white-space: normal; }
   .slider-arrow { width: 40px; height: 40px; }
   .slider-arrow.prev { left: 10px; }
   .slider-arrow.next { right: 10px; }
