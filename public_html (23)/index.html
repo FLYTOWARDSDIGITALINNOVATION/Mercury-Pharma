@@ -743,11 +743,6 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
 .back-top.visible { opacity: 1; pointer-events: all; }
 .back-top:hover { background: var(--blue-dark); transform: translateY(-2px); }
 
-/* VISITOR COUNTER */
-.visitor-counter { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 4px 12px; font-size: 12px; display: flex; align-items: center; gap: 6px; }
-.visitor-dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: blink 1.5s infinite; }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-
 /* PAGE HERO */
 .page-hero { padding: 80px 0; text-align: center; margin-top: var(--header-height); position: relative; overflow: hidden; }
 .page-hero.services { background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #0a2a6e 100%); }
@@ -932,13 +927,12 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
         <span><i class="fa fa-phone"></i> +91 82707 05556</span>
         <span><i class="fa fa-envelope"></i> mercurypharma@yahoo.com</span>
         <span id="topHoursItem" title="Mon–Sat: 8:30 AM – 7:00 PM | Sun: Closed"><i class="fa fa-clock"></i> <span id="currentDaySchedule">8:30 AM – 7:00 PM</span> <span id="storeStatusBadge" class="store-badge open"><span class="badge-dot"></span>Open Now</span></span>
-        <div class="visitor-counter"><div class="visitor-dot"></div> <span id="visitorCount">Loading...</span> visitors</div>
       </div>
       <div class="top-bar-right">
         <div id="google_translate_element"></div>
         <div class="top-social">
-          <a href="https://www.facebook.com/share/1D6erhpv7J/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/mercurypharma.co?stkn=Mm9tMjMwMm8wMWQ3" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1CTbrThfsa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/mercurypharma.co.in?gwpx=bG4wYTNuYzk3aTEy&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/918270705556" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
@@ -1799,8 +1793,8 @@ footer { background: var(--blue-dark); color: rgba(255,255,255,0.8); }
           <p>Mercury Pharma is a leading pharmaceutical wholesale company providing a wide range of medicines and healthcare products at affordable prices with timely delivery across Tamil Nadu.</p>
           <div class="footer-quote">"You Will Almost Always Find Your Medicines Here"</div>
           <div class="footer-social">
-            <a href="https://www.facebook.com/share/1D6erhpv7J/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/mercurypharma.co?stkn=Mm9tMjMwMm8wMWQ3" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/1CTbrThfsa/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mercurypharma.co.in?gwpx=bG4wYTNuYzk3aTEy&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://wa.me/918270705556" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mercurypharma@yahoo.com" target="_blank" rel="noopener" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           </div>
@@ -2123,14 +2117,6 @@ function triggerFadeIns() {
     }
   });
 }
-
-// ===== VISITOR COUNTER =====
-const storedVisits = parseInt(localStorage.getItem('mp_visits') || '0');
-const newVisits = storedVisits + 1;
-localStorage.setItem('mp_visits', newVisits);
-const baseVisitors = 24800;
-const displayCount = baseVisitors + newVisits;
-document.getElementById('visitorCount').textContent = displayCount.toLocaleString('en-IN');
 
 // ===== CURRENT DATE, DAY & WORKING HOURS =====
 function updateCurrentDayHours() {
